@@ -9,10 +9,21 @@ if (POLICY CMP0141)
   set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>")
 endif()
 
-project ("TCPIPSTACK")
+project ("TCPIPSTACK" LANGUAGES C)
 
 # Adicione a origem ao executável deste projeto.
-add_executable (TCPIPSTACK "TCPIPSTACK.cpp" "TCPIPSTACK.h" "tuntap_if.c" "include/syshead.h")
+add_executable (
+	TCPIPSTACK  
+	"src/main.c" 
+	"src/tuntap_if.c" 
+ "include/utils.h")
+
+target_include_directories(
+	TCPIPSTACK
+	PUBLIC
+	"${CMAKE_CURRENT_SOURCE_DIR}/include"
+    "${CMAKE_CURRENT_SOURCE_DIR}"
+)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET TCPIPSTACK PROPERTY CXX_STANDARD 20)
