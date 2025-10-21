@@ -83,11 +83,11 @@ struct arp_cache_entry
 };
 
 void arp_init();
-void free_arp();
-void arp_rcv(struct sk_buff* skb);
-void arp_reply(struct sk_buff* skb, struct netdev* netdev);
-int arp_request(uint32_t sip, uint32_t dip, struct netdev* netdev);
-unsigned char* arp_get_hwaddr(uint32_t sip);
+//void free_arp();
+//void arp_rcv(struct sk_buff* skb);
+//void arp_reply(struct sk_buff* skb, struct netdev* netdev);
+//int arp_request(uint32_t sip, uint32_t dip, struct netdev* netdev);
+//unsigned char* arp_get_hwaddr(uint32_t sip);
 
 static inline struct arp_hdr* arp_hdr(struct sk_buff* skb)
 {

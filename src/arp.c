@@ -1,6 +1,5 @@
 #include "arp.h"
 #include "netdev.h"
-#include <arpa/inet.h> // For ntohs
 
 /*
  * https://tools.ietf.org/html/rfc826 <- an enthernet address resolution protocol
