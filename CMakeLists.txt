@@ -16,7 +16,10 @@ add_executable (
 	TCPIPSTACK  
 	"src/main.c" 
 	"src/tuntap_if.c" 
- "include/utils.h")
+	"include/utils.h"
+	"include/syshead.h"
+	"include/basic.h"
+ "include/arp.h" "include/netdev.h")
 
 target_include_directories(
 	TCPIPSTACK
